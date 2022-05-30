@@ -46,12 +46,12 @@
             <div class="card-body">
             <?php
                 include '../database.php';
-                $dosen = new Dosen();
-                foreach ($dosen->show($_GET['id']) as $data) {
+                $mahasiswa = new Mahasiswa();
+                foreach ($mahasiswa->show($_GET['id']) as $data) {
                     $id = $data['id'];
                     $nim = $data['nim'];
                     $nama = $data['nama'];
-                    $id_dosen = $data['id_dosen'];
+                    $nama_dosen = $data['nama_dosen'];
                 }
             ?>
             <form action="" method="">
@@ -67,7 +67,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nama Dosen</label>
-                        <input type="text" class="form-control" name="id_dosen" value="<?php echo $id_dosen; ?>" disabled>
+                        <input type="text" class="form-control" name="nama_dosen" value="<?php echo $nama_dosen; ?>" disabled>
                     </div>
                 </form>
 

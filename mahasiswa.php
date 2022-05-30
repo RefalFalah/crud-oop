@@ -4,7 +4,9 @@ class Mahasiswa extends Database
     //menampilkan data mahasiswa ke index.php
     public function index()
     {
-        $datamahasiswa = mysqli_query($this->koneksi, "select mahasiswa.nim, mahasiswa.nama, dosen.nama as nama_dosen from dosen join mahasiswa on dosen.id = mahasiswa.id_dosen");
+        $datamahasiswa = mysqli_query($this->koneksi, "select mahasiswa.id, mahasiswa.nim, mahasiswa.nama, dosen.nama as nama_dosen 
+        from dosen 
+        join mahasiswa on dosen.id = mahasiswa.id_dosen");
 
         return $datamahasiswa;
     }
@@ -37,10 +39,10 @@ class Mahasiswa extends Database
     public function show($id)
     {
         $datamahasiswa = mysqli_query($this->koneksi,
-            "select mahasiswa.nim, mahasiswa.nama, dosen.nama as nama_dosen 
+            "select mahasiswa.id, mahasiswa.nim, mahasiswa.nama, dosen.nama as nama_dosen 
             from dosen 
-            join mahasiswa on dosen.id = mahasiswa.id_dosen 
-            where id='$id'"
+            join mahasiswa on dosen.id = mahasiswa.id_dosen
+            where mahasiswa.id='$id'"
         );
 
         return $datamahasiswa;
