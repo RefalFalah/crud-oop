@@ -59,7 +59,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Mata kuliah</label>
-                        <input type="text" class="form-control" name="nama">
+                        <input type="text" class="form-control" name="mata_kuliah">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <button type="submit" name="save" class="btn btn-primary">Simpan</button>
