@@ -37,7 +37,10 @@ class Mahasiswa extends Database
     public function show($id)
     {
         $datamahasiswa = mysqli_query($this->koneksi,
-            "select * from mahasiswa where id='$id'"
+            "select mahasiswa.nim, mahasiswa.nama, dosen.nama as nama_dosen 
+            from dosen 
+            join mahasiswa on dosen.id = mahasiswa.id_dosen 
+            where id='$id'"
         );
 
         return $datamahasiswa;
